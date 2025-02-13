@@ -1,0 +1,6 @@
+public enum Controls{
+    CONTROLLER_UP,
+    CONTROLLER_DOWN,
+    CONTROLLER_LEFT,
+    CONTROLLER_RIGHT,
+}
