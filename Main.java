@@ -1,50 +1,90 @@
 import javax.swing.JTextField;
 import javax.swing.JFrame;
-public class Main{
-    public static Player player;
-    public static JTextField player1_name, player2_name;
-    public static Controller controller;
-    public static JFrame gameFrame;
+import java.util.EventListener;
+import java.awt.Graphics2D;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.event.KeyListener;
 
-    public static JFrame getGameFrame(JFrame frame) {
-        if (gameFrame == null) {
-            gameFrame = frame;
+public class Main {
+    private static Player player;
+    private static JTextField textField;
+    private static JFrame gameFrame;
+    private static EventListener eventListener;
+    private static Graphics2D graphics2D;
+    private static JLabel label;
+    private static JButton button;
+    private static KeyListener keyListener;
+
+    /* Game Frame */
+
+    public static void setupGameFrame(){
+        if(gameFrame == null) {
+            gameFrame = new JFrame("Game");
         }
-        gameFrame.setSize(500, 500);
-        gameFrame.setVisible(true);
-        return gameFrame;
     }
 
-    public static Controller getController(Controller c) {
-        if (controller == null) {
-            controller = c;
+    public static JFrame getGameFrame() {
+        if (gameFrame != null) {
+            return gameFrame;
         }
-        return controller;
+        return null;
     }
 
-    public static JTextField getText(JTextField p1, JTextField p2) {
-        if (player1_name == null) {
-            player1_name = p1;
-            player2_name = p2;
+    /* Player */
+    public static Player getPlayer(){
+        if(player != null) {
+            return player;
         }
-        player1_name.setVisible(true);
-        player2_name.setVisible(true);
-        return player1_name;
+        return null;
     }
 
-    public static Player getPlayer(Player p){
-        player = p;
-        player.axis = new int[4];
-        player.scores = new int [2];
-        player.names = new String[2];
-        return player;
+    /* Events */
+    public static EventListener getEventListener(){
+        if(eventListener != null) {
+            return eventListener;
+        }
+        return null;
     }
 
-    public static void storeUsernames(){
-        player.names[0] = player1_name.getText();
-        player.names[1] = player2_name.getText();
+    /* Text fields */
+    public static JTextField getTextField() {
+        if (textField != null) {
+            return textField;
+        }
+        return null;
     }
 
-    public static void main(String[] args){
+    /* Graphics */
+    public static Graphics2D getGraphics2D(){
+        if(graphics2D != null){
+            return graphics2D;
+        }
+        return null;
     }
-};
+
+    /* Labels */
+    public static JLabel getLabel(){
+        if(label != null){
+            return label;
+        }
+        return null;
+    }
+
+    /* Buttons */
+    public static JButton getButton() {
+        if (button != null) {
+            return button;
+        }
+        return null;
+    }
+
+    /* Key listener */
+    public static KeyListener getKeyListener(){
+        if(keyListener != null) {
+            return keyListener;
+        }
+        return null;
+    }
+}
+
